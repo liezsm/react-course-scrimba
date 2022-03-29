@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --card-bgcolor: #23252c;
+  --descp-bg: #1a1b21;
+  --social-bg: #161619;
+
+  --emailTextBtn: #374151;
+  --emailBorder: #d1d5db;
+
+  --linkedInBtn: #5093e2;
+  --white: #ffffff;
+
+  --websiteText: #f5f5f5;
+  --position: #f3bf99;
+
+  -paracolor: #dcdcdc;
+}
+body {
+  margin: 0;
+}
