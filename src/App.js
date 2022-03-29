@@ -1,9 +1,10 @@
-import "./App.css";
+import Card from "./digitalBusinessCard/components/Card";
 
+import "./digitalBusinessCard/app.css";
 function App() {
   return (
     <div className='App'>
-      <h1>Test</h1>
+      <Card />
     </div>
   );
 }
