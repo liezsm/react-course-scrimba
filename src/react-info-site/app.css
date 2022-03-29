@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  text-align: left;
+}
+header {
+  background-color: #21222a;
+  padding: 31px 20px;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+}
+header img {
+  width: 50px;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+header .title {
+  color: #61dafb;
+}
+nav {
+  color: #deebf8;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  text-align: left;
+}
+main {
+  background: #282d35;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: min(calc(100vh - 150px), 700px);
+  text-align: left;
+}
+main::before {
+  content: " ";
+  position: absolute;
+  width: 263px;
+  height: 90%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url("./img/reactjs-icon\ 2.svg") center center/contain no-repeat;
+
+  z-index: -1;
+}
+main ul {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  list-style: none;
+}
+
+main ul li {
+  padding: 0.5rem;
+}
+main li::before {
+  content: "\2022";
+  color: #61dafb;
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1rem; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+.facts-container {
+  width: min(calc(100% - 4rem), 500px);
+  margin-inline: auto;
+  color: #fff;
+  padding: 57px 1rem;
+}
