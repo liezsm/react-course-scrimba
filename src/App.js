@@ -1,10 +1,14 @@
 import React from "react";
+import Header from "./travelJourney/components/Header";
+import Travels from "./travelJourney/components/Travels";
+
+import travels from "./travelJourney/travelsData.json";
 
 function App() {
   return (
     <div className='App'>
-      <h1>resr</h1>
-      <h2>ljfldaj</h2>
+      <Header />
+      <Travels data={travels} />
     </div>
   );
 }
