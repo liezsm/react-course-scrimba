@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --semi-black: #0d0d0d;
+  --semi-white: #fcfcfc;
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #d5d4d8;
+  --violet: #672280;
+  --violet-2: #711f8d;
+  --violet-3: #8d24b1;
+  --gradient: linear-gradient(
+    to right,
+    var(--violet),
+    var(--violet-2),
+    var(--violet-3)
+  );
+}
+
+body {
+  margin: 0;
+  font-family: "Karla", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+header {
+  width: 100%;
+  background: var(--gradient);
+  height: 100px;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+header > h1 {
+  font-size: 1.3125rem;
+  font-weight: bold;
+}
+
+header > h3 {
+  font-size: 0.75rem;
+}
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: auto;
+  height: 100%;
+}
+.logo_img {
+  max-height: 80%;
+}
+
+main {
+  width: 100%;
+
+  padding: clamp(1rem, calc(1rem + 2vw), 4rem);
+}
+section {
+  width: min(100%, 700px);
+  margin-inline: auto;
+}
+/* buttons generate are */
+
+.generator {
+  display: grid;
+  grid-template-areas:
+    "input-1 input-2"
+    "btn btn";
+  gap: 2rem 1rem;
+}
+input[type="text"]:nth-of-type(1) {
+  grid-area: input-1;
+}
+input[type="text"]:nth-of-type(2) {
+  grid-area: input-2;
+}
+
+.generate-btn {
+  grid-area: btn;
+  background: var(--gradient);
+}
+
+input[type="text"],
+button[type="submit"] {
+  padding: 1rem;
+  border-radius: 0.6rem;
+  font-family: inherit;
+}
+
+input[type="text"] {
+  border: 1.71px solid #d5d4d8;
+  outline: none;
+  color: var(--semi-black);
+  font-size: 0.75rem;
+}
+button[type="submit"] {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* meme */
+
+.meme {
+  margin-top: 2rem;
+  position: relative;
+  border: 1px solid red;
+}
+
+.meme img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meme > p {
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000;
+}
+
+.top {
+  top: 1rem;
+  left: 0;
+  right: 0;
+}
+
+.bottom {
+  bottom: 1rem;
+  right: 0;
+  left: 0;
+}
