@@ -1,11 +1,11 @@
 import React from "react";
 
-export const MemeItem = (props) => {
+export const MemeItem = ({ meme }) => {
   return (
     <section className='meme'>
-      <img src={props.img} alt='meme' />
-      <p className='top'>{props.meme.top}</p>
-      <p className='bottom'>{props.meme.bottom}</p>
+      <img src={meme.img} alt='meme' />
+      <p className='top'>{meme.top}</p>
+      <p className='bottom'>{meme.bottom}</p>
     </section>
   );
 };

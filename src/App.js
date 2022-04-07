@@ -1,44 +1,56 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Header } from "./app/components/Header";
 import { Meme } from "./app/components/Meme";
 import { useState } from "react";
 
-import memesData from "./app/memesData";
-import meme from "./app/img/meme.png";
+import memeImg from "./app/img/meme.png";
+
 function App() {
-  const [memeText, setMemeText] = useState({
+  const [meme, setMeme] = useState({
     top: "",
     bottom: "",
+    img: memeImg,
   });
 
-  const [memeImg, setMemeImg] = useState(meme);
+  const [allMemes, setAllMemes] = useState([]);
 
   const generateMeme = () => {
     // get the array of memes
 
-    const memes = memesData.data.memes;
-    const randomNum = Math.floor(Math.random() * memes.length);
-    const memeUrl = memes[randomNum].url;
-    console.log(memeUrl);
-    setMemeImg(memeUrl);
+    const randomNum = Math.floor(Math.random() * allMemes.length);
+    const memeUrl = allMemes[randomNum].url;
+
+    setMeme((prev) => {
+      return { ...prev, img: memeUrl };
+    });
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    setMemeText({
-      ...memeText,
-      [name]: value,
+    setMeme((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
     });
   };
+
+  // useEffect
+
+  useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      .then((data) => setAllMemes(data.data.memes));
+  }, []);
+
   return (
     <div className='App'>
       <Header />
       <Meme
         generateMeme={generateMeme}
-        meme={memeText}
+        meme={meme}
         handleInput={handleChange}
-        img={memeImg}
       />
     </div>
   );
